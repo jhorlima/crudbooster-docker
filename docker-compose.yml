@@ -8,7 +8,7 @@ volumes:
 
 services:
   mysql:
-    image: ambientum/mysql:5.7
+    image: mysql:5.7
     container_name: crudbooster-mysql
     volumes:
       - mysql-data:/var/lib/mysql
@@ -21,7 +21,8 @@ services:
       - MYSQL_PASSWORD=secret
 
   redis:
-    image: redis:4.0
+    image: redis:5.0-alpine
+    command: 'redis-server --requirepass acme'
     container_name: crudbooster-redis
     command: --appendonly yes
     volumes:
@@ -30,7 +31,7 @@ services:
       - "6379:6379"
 
   php:
-    image: ambientum/php:7.1-caddy
+    image: ambientum/php:7.3-nginx
     container_name: crudbooster-php
     volumes:
       - ./app/:/var/www/app
