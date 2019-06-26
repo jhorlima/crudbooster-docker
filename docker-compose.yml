@@ -22,7 +22,6 @@ services:
 
   redis:
     image: redis:5.0-alpine
-    command: 'redis-server --requirepass acme'
     container_name: crudbooster-redis
     command: --appendonly yes
     volumes:
