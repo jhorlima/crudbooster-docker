@@ -32,6 +32,9 @@ services:
   php:
     image: ambientum/php:7.3-nginx
     container_name: crudbooster-php
+    environment:
+      - DB_HOST=mysql
+      - REDIS_HOST=redis
     volumes:
       - ./app/:/var/www/app
     ports:

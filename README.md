@@ -17,7 +17,7 @@ docker-compose up -d
 3 - Após criar os containers, crie um novo projeto Laravel:
 
 ```sh
-docker-compose exec php composer create-project --prefer-dist laravel/laravel ./
+docker-compose exec php composer create-project --prefer-dist laravel/laravel:5.7 ./
 ```
 
 4 - Crie as chaves exclusivas da sua aplicação Laravel:
